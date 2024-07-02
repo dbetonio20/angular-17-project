@@ -1,0 +1,23 @@
+<section>
+
+    <button #inter>Show Large Component</button>
+    <button (click)="pref = true">Prefetch</button>
+
+
+    @defer (on interaction(inter); prefetch when pref){
+        <large-component></large-component>
+    }
+
+    @defer (on interaction(inter)) {
+        <large-component #car></large-component>
+    } @placeholder (minimum 500ms){
+        <img src="https://c.tenor.com/lwoULCdn-y4AAAAC/tenor.gif">
+    } @loading {
+        <img src="https://media1.tenor.com/m/jfmI0j5FcpAAAAAd/loading-wtf.gif">
+    } @error {
+        <p>error!</p>
+    }
+
+
+
+</section>
